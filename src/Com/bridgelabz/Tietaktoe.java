@@ -6,35 +6,70 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Tietaktoe {
-    static void board() {
-        char[] arr = new char[10];
-        for (int i = 1; i < 9; i++) {
-            arr[i] = ' ';
-        }
 
-    }
-    static void input () {
 
-        System.out.println("enter X and O as a input");
-        Scanner sc = new Scanner(System.in);
-        char input = sc.next().charAt(0);
-        if (input == 'X') {
-            System.out.println("the value is X");
-        }
-        else if(input=='O')
-        {
-            System.out.println("the value is O");
-        }
-        else
-        {
-            System.out.println("enter a valid input");
+
+    private static void printBoard(char[][] board) {
+        System.out.print((board[0][0]));
+        System.out.print("|");
+        System.out.print((board[0][1]));
+        System.out.print("|");
+        System.out.println((board[0][2]));
+        System.out.println("-----");
+        System.out.print((board[1][0]));
+        System.out.print("|");
+        System.out.print((board[1][1]));
+        System.out.print("|");
+        System.out.println((board[1][2]));
+        System.out.println("-----");
+        System.out.print((board[2][0]));
+        System.out.print("|");
+        System.out.print((board[2][1]));
+        System.out.print("|");
+        System.out.println((board[2][2]));
+    }
+
+
+    private static boolean isValidMove(char[][] board, String position) {
+        switch (position) {
+            case "1":
+                return (board[0][0] == ' ');
+            case "2":
+                return (board[0][1] == ' ');
+            case "3":
+                return (board[0][2] == ' ');
+            case "4":
+                return (board[1][0] == ' ');
+            case "5":
+                return (board[1][1] == ' ');
+            case "6":
+                return (board[1][2] == ' ');
+            case "7":
+                return (board[2][0] == ' ');
+            case "8":
+                return (board[2][1] == ' ');
+            case "9":
+                return (board[2][2] == ' ');
+            default:
+                return false;
         }
     }
+
     public static void main(String[] args) {
-        board();
-        input();
+        char[][] board = {{' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}};
+        printBoard(board);
+        char[][] nnn= {{' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}};
+        isValidMove();
     }
-}
+
+    }
+
+
+
 
             // public static void main(String[] args) {
 
